@@ -3,8 +3,7 @@ package SP01.SelPro;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Iterator;
-import java.util.Set;
+
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -29,10 +28,15 @@ public class TakeScreenshott {
 
 		// Capture Screenshot of fullscreen
 
-		TakesScreenshot tc = ((TakesScreenshot) driver); // Takesscreenshot is interface so is driver ,so we typecasted the takesscreenshot
+		TakesScreenshot tc = ((TakesScreenshot) driver); // Takesscreenshot is interface so is driver ,so we typecasted
+															// the takesscreenshot
 		File src = tc.getScreenshotAs(OutputType.FILE);
 		File location = new File(".\\Screenshots\\Homepage.png");
 		FileUtils.copyFile(src, location);
+
+		// OR SHORT LIINES FOR SCREENSHOT
+//		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		FileUtils.copyFile(src, new File(".\\Screenshots\\test.png"));
 
 		// Capture screenshot of particular section of screen{LOGO}
 
