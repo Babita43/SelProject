@@ -52,6 +52,26 @@ for(int i=0;i<row.size();i++)
 	System.out.println("Priting the data of 2x1 : "+row.get(i).getText());
 }
 
+
+//program to find the name of the place
+
+List<WebElement> names = driver.findElements(By.xpath("//table[@id='table1']//td[1]"));
+String name = "Praveen";
+
+int row2 =0;
+for(int i= 1; i<names.size();i++)
+{
+	if(names.get(i).getText().equals(name))
+{
+	row2=i;
+}
+	
+}
+
+String place = "//table[@id='table1']//tr["+(row2+1)+"]//td[3]";
+System.out.println(driver.findElement(By.xpath(place)).getText());
+
+
 	}
 
 }
